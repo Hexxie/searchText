@@ -8,7 +8,9 @@ set(CMAKE_CXX_STANDARD 11)
 # Find boost
 ############################################
 
-find_package( Boost 1.62 REQUIRED COMPONENTS filesystem system)
+set (BOOST_ROOT /home/manjaro/Tools/boost_1_69_0)
+
+find_package( Boost 1.69 REQUIRED COMPONENTS filesystem system)
 
 # check if boost was found
 if(Boost_FOUND)
