@@ -5,6 +5,7 @@
  */
 
 #include "DownloadManager.h"
+#include <iostream>
 
 DownloadManager::DownloadManager() {}
 DownloadManager::DownloadManager(
@@ -36,3 +37,8 @@ std::string DownloadManager::getWord(){
 std::string DownloadManager::getLink(){
   return startUrl;
 }
+
+int DownloadManager::startDownload() { std::cout<<"startDownload"<<std::endl; }
+int DownloadManager::stopDownload() { std::cout<<"startDownload"<<std::endl; }
+int DownloadManager::pauseDownload() { std::cout<<"startDownload"<<std::endl; }
+int DownloadManager::resumeDownload() { std::cout<<"startDownload"<<std::endl; }

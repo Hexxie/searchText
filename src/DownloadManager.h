@@ -9,15 +9,31 @@
 
 #include <string>
 
-DownloadManager();
-~DownloadManager();
+class DownloadManager {
+public:
 
-void setMaxUrl(int maxUrls);
-void setWord (std::string word);
-void setLink(std::string url);
+  DownloadManager();
+  DownloadManager(std::string word, std::string url);
 
-int getMaxUrl();
-std::string getWord();
-std::string getLink();
+  ~DownloadManager();
+
+  void setMaxUrl(int maxUrls);
+  void setWord (std::string word);
+  void setLink(std::string url);
+
+  int getMaxUrl();
+  std::string getWord();
+  std::string getLink();
+
+  int startDownload();
+  int stopDownload();
+  int pauseDownload();
+  int resumeDownload();
+
+private:
+  int maxUrls{10};
+  std::string searchedWord{""};
+  std::string startUrl{""};
+}
 
 #endif
