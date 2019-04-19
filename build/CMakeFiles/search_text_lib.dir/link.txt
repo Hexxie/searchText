@@ -1,0 +1,2 @@
+/usr/bin/ar qc libsearch_text_lib.a  CMakeFiles/search_text_lib.dir/src/DownloadManager.cpp.o CMakeFiles/search_text_lib.dir/src/Link.cpp.o
+/usr/bin/ranlib libsearch_text_lib.a
