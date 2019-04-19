@@ -8,24 +8,26 @@ set(CMAKE_CXX_STANDARD 11)
 # Find boost
 ############################################
 
-set (BOOST_ROOT /home/manjaro/Tools/boost_1_69_0)
+#set (BOOST_ROOT /home/manjaro/Tools/boost_1_69_0)
 
-find_package( Boost 1.69 REQUIRED COMPONENTS filesystem system)
+#find_package( Boost 1.69 REQUIRED COMPONENTS filesystem system)
 
 # check if boost was found
-if(Boost_FOUND)
-    message ("boost found")
-else()
-    message (FATAL_ERROR "Cannot find Boost")
-endif()
+#if(Boost_FOUND)
+#    message ("boost found")
+#else()
+#    message (FATAL_ERROR "Cannot find Boost")
+#endif()
+
+############################################
 
 #############################################
 # Create a library
 ############################################
 
 add_library(search_text_lib 
-    src/Reverse.cpp
-    src/Palindrome.cpp
+    src/DownloadManager.cpp
+    src/Link.cpp
 )
 
 #############################################
@@ -38,7 +40,9 @@ add_subdirectory(extern/googletest)
 enable_testing()
 
 # Add a testing executable
-add_executable(unit_tests test/unit_tests.cpp)
+add_executable(unit_tests
+ test/DownloadManagerTest.cpp
+ test/main.cpp)
 
 target_include_directories(unit_tests  
     PRIVATE 
@@ -48,7 +52,6 @@ target_link_libraries(unit_tests
     search_text_lib
     GTest::GTest 
     GTest::Main
-    Boost::filesystem
 )
 
 add_test(test_all unit_tests)

@@ -34,4 +34,6 @@ std::string DownloadManager::getUrl() const{
   return startUrl.toString();
 }
 
-int DownloadManager::downloadUrl() {}
+int DownloadManager::downloadUrl() {
+  
+}

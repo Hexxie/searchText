@@ -24,6 +24,8 @@ public:
 
   std::string getWord() const;
   std::string getUrl() const;
+  
+  int downloadUrl();
 
 private:
   int maxUrls{10};
