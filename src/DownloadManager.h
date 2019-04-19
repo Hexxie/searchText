@@ -9,6 +9,9 @@
 
 #include <string>
 
+DownloadManager();
+~DownloadManager();
+
 void setMaxUrl(int maxUrls);
 void setWord (std::string word);
 void setLink(std::string url);
