@@ -7,7 +7,6 @@ Inner structure: <br><br>
 │   ├── boost<br>
 │   └── googletest<br>
 ├── include<br>
-├── output<br>
 ├── README.md<br>
 ├── src<br>
 │   └── tryboost.cpp<br>
