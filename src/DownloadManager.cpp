@@ -5,7 +5,7 @@
  */
 
 #include "DownloadManager.h"
-#include <iostream>
+#include "page/Page.h"
 
 DownloadManager::DownloadManager() {
   curl = curl_easy_init();
@@ -34,16 +34,15 @@ std::string DownloadManager::getUrl() const{
 
 int DownloadManager::downloadUrl() {
 
-   curl_easy_setopt(curl, CURLOPT_URL, startUrl.toString().c_str());
-   curl_easy_setopt(curl, CURLOPT_HEADERFUNCTION,
-                    [](char *buffer, size_t size,
-                      size_t nitems, void *userdata)-> size_t
-   {
-       std::cout<<buffer<<std::endl;
-       return nitems * size;
-   });
+//check return for each statement
+  curl_easy_setopt(curl, CURLOPT_URL, startUrl.toString().c_str());
+  curl_easy_setopt(curl, CURLOPT_HEADERFUNCTION, &Page::headerCallback);
+  curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, &Page::writerCallback);
+  curl_easy_setopt(curl, CURLOPT_WRITEDATA, &buffer);
 
   int result = curl_easy_perform(curl);
+
+  //save data to file
 
    return result;
 }
