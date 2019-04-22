@@ -1,0 +1,2 @@
+/usr/bin/ar qc libsrc/DownloadManager.cpp.a  CMakeFiles/src/DownloadManager.cpp.dir/src/wrappers/Link.cpp.o
+/usr/bin/ranlib libsrc/DownloadManager.cpp.a

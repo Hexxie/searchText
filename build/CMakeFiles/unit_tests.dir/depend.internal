@@ -3,7 +3,7 @@
 
 CMakeFiles/unit_tests.dir/test/DownloadManagerTest.cpp.o
  ../src/DownloadManager.h
- ../src/Link.h
+ ../src/wrappers/Link.h
  /home/hexxie/projects/searchText/test/DownloadManagerTest.cpp
  extern/googletest/googletest-src/googletest/include/gtest/gtest-death-test.h
  extern/googletest/googletest-src/googletest/include/gtest/gtest-message.h

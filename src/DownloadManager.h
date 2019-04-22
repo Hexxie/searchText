@@ -8,8 +8,10 @@
 #define _DOWNLOAD_MNG_H_
 
 #include <string>
+#include <iostream>
 
-#include "Link.h"
+#include "wrappers/Link.h"
+#include <curl/curl.h>
 
 class DownloadManager {
 public:
@@ -19,16 +21,24 @@ public:
 
   ~DownloadManager();
 
-  void setWord (std::string word);
   void setUrl(std::string url);
 
-  std::string getWord() const;
   std::string getUrl() const;
+  
+  int downloadUrl();
 
 private:
   int maxUrls{10};
   std::string searchedWord{""};
   Link startUrl{};
+  CURL *curl;
+
+  static size_t headerCallback(char *buffer, size_t size,
+                               size_t nitems, void *userdata) {
+    std::cout<<buffer<<std::endl;
+    return nitems * size;
+  }
+
 };
 
 #endif

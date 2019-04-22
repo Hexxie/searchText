@@ -3,6 +3,7 @@ cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
 project(search_text)
 
 set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_BUILD_TYPE Debug)
 
 #############################################
 # Find boost
@@ -25,9 +26,10 @@ set(CMAKE_CXX_STANDARD 11)
 # Create a library
 ############################################
 
-add_library(search_text_lib 
-    src/DownloadManager.cpp
-    src/Link.cpp
+
+add_library(searchtext
+	src/wrappers/Link.cpp
+  src/DownloadManager.cpp    
 )
 
 #############################################
@@ -46,10 +48,13 @@ add_executable(unit_tests
 
 target_include_directories(unit_tests  
     PRIVATE 
-        ${PROJECT_SOURCE_DIR}/src)
+   		  ${PROJECT_SOURCE_DIR}/src/wrappers
+        ${PROJECT_SOURCE_DIR}/src        
+        ${PROJECT_SOURCE_DIR}/extern/curl/curl)
 
 target_link_libraries(unit_tests
-    search_text_lib
+    searchtext
+    curl
     GTest::GTest 
     GTest::Main
 )

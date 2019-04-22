@@ -3,8 +3,11 @@ CONFIG += console
 CONFIG -= app_bundle
 CONFIG -= qt
 
+DEPENDPATH += extern/curl/curl
+INCLUDEPATH += extern/curl/curl
+LIBS += -L./extern/curl -lcurl
+
 SOURCES += main.cpp \
-    src/main.cpp \
     src/DownloadManager.cpp \
     test/DownloadManagerTest.cpp \
     test/main.cpp \

@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/hexxie/projects/searchText/src/DownloadManager.cpp
+DownloadManager.h
+/home/hexxie/projects/searchText/src/DownloadManager.h
+
+/home/hexxie/projects/searchText/src/DownloadManager.h
+string
+-
+iostream
+-
+wrappers/Link.h
+/home/hexxie/projects/searchText/src/wrappers/Link.h
+curl/curl.h
+-
+
+/home/hexxie/projects/searchText/src/wrappers/Link.cpp
+Link.h
+/home/hexxie/projects/searchText/src/wrappers/Link.h
+
+/home/hexxie/projects/searchText/src/wrappers/Link.h
+string
+-
+

@@ -9,10 +9,14 @@
 ../src/DownloadManager.h
 string
 -
-Link.h
-../src/Link.h
+iostream
+-
+wrappers/Link.h
+../src/wrappers/Link.h
+curl/curl.h
+-
 
-../src/Link.h
+../src/wrappers/Link.h
 string
 -
 

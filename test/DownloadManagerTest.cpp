@@ -5,16 +5,6 @@ class DownloadManagerTest:public::testing::Test {
 
 };
 
-TEST_F(DownloadManagerTest, setWordStringGetTheSameString) {
-  DownloadManager d;
-
-  EXPECT_EQ("", d.getWord());
-
-  d.setWord("CruelWorld");
-
-  EXPECT_EQ("CruelWorld", d.getWord());
-}
-
 TEST_F(DownloadManagerTest, setUrlStringGetTheSameString) {
   DownloadManager d;
 
@@ -25,3 +15,10 @@ TEST_F(DownloadManagerTest, setUrlStringGetTheSameString) {
   EXPECT_EQ("CruelWorld", d.getUrl());
 }
 
+
+TEST_F(DownloadManagerTest, testDownload) {
+  DownloadManager d;
+  d.setUrl("https://curl.haxx.se/libcurl/c/CURLOPT_HEADERFUNCTION.html");
+
+  EXPECT_EQ(0, d.downloadUrl());
+}

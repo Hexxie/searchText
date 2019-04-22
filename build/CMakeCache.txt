@@ -334,6 +334,12 @@ search_text_SOURCE_DIR:STATIC=/home/hexxie/projects/searchText
 //Dependencies for target
 search_text_lib_LIB_DEPENDS:STATIC=
 
+//Dependencies for target
+searchtext_LIB_DEPENDS:STATIC=
+
+//Dependencies for target
+src/DownloadManager.cpp_LIB_DEPENDS:STATIC=
+
 
 ########################
 # INTERNAL cache entries

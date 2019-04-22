@@ -116,10 +116,10 @@ unit_tests_EXTERNAL_OBJECTS =
 unit_tests: CMakeFiles/unit_tests.dir/test/DownloadManagerTest.cpp.o
 unit_tests: CMakeFiles/unit_tests.dir/test/main.cpp.o
 unit_tests: CMakeFiles/unit_tests.dir/build.make
-unit_tests: libsearch_text_lib.a
-unit_tests: extern/googletest/googletest-build/googlemock/gtest/libgtest.a
-unit_tests: extern/googletest/googletest-build/googlemock/gtest/libgtest_main.a
-unit_tests: extern/googletest/googletest-build/googlemock/gtest/libgtest.a
+unit_tests: libsearchtextd.a
+unit_tests: extern/googletest/googletest-build/googlemock/gtest/libgtestd.a
+unit_tests: extern/googletest/googletest-build/googlemock/gtest/libgtest_maind.a
+unit_tests: extern/googletest/googletest-build/googlemock/gtest/libgtestd.a
 unit_tests: CMakeFiles/unit_tests.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/hexxie/projects/searchText/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable unit_tests"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/unit_tests.dir/link.txt --verbose=$(VERBOSE)

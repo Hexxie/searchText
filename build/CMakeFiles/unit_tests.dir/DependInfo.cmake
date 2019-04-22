@@ -11,13 +11,15 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  "../src/wrappers"
   "../src"
+  "../extern/curl/curl"
   "extern/googletest/googletest-src/googletest/include"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/hexxie/projects/searchText/build/CMakeFiles/search_text_lib.dir/DependInfo.cmake"
+  "/home/hexxie/projects/searchText/build/CMakeFiles/searchtext.dir/DependInfo.cmake"
   "/home/hexxie/projects/searchText/build/extern/googletest/googletest-build/googlemock/gtest/CMakeFiles/gtest.dir/DependInfo.cmake"
   "/home/hexxie/projects/searchText/build/extern/googletest/googletest-build/googlemock/gtest/CMakeFiles/gtest_main.dir/DependInfo.cmake"
   )

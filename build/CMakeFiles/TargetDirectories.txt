@@ -1,6 +1,6 @@
-/home/hexxie/projects/searchText/build/CMakeFiles/rebuild_cache.dir
 /home/hexxie/projects/searchText/build/CMakeFiles/edit_cache.dir
-/home/hexxie/projects/searchText/build/CMakeFiles/search_text_lib.dir
+/home/hexxie/projects/searchText/build/CMakeFiles/rebuild_cache.dir
+/home/hexxie/projects/searchText/build/CMakeFiles/searchtext.dir
 /home/hexxie/projects/searchText/build/CMakeFiles/test.dir
 /home/hexxie/projects/searchText/build/CMakeFiles/unit_tests.dir
 /home/hexxie/projects/searchText/build/extern/googletest/CMakeFiles/rebuild_cache.dir

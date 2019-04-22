@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /home/hexxie/projects/searchText/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -77,6 +66,17 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # Special rule for the target test
 test:
@@ -122,17 +122,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named search_text_lib
+# Target rules for targets named searchtext
 
 # Build rule for target.
-search_text_lib: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 search_text_lib
-.PHONY : search_text_lib
+searchtext: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 searchtext
+.PHONY : searchtext
 
 # fast build rule for target.
-search_text_lib/fast:
-	$(MAKE) -f CMakeFiles/search_text_lib.dir/build.make CMakeFiles/search_text_lib.dir/build
-.PHONY : search_text_lib/fast
+searchtext/fast:
+	$(MAKE) -f CMakeFiles/searchtext.dir/build.make CMakeFiles/searchtext.dir/build
+.PHONY : searchtext/fast
 
 #=============================================================================
 # Target rules for targets named unit_tests
@@ -205,7 +205,7 @@ src/DownloadManager.o: src/DownloadManager.cpp.o
 
 # target to build an object file
 src/DownloadManager.cpp.o:
-	$(MAKE) -f CMakeFiles/search_text_lib.dir/build.make CMakeFiles/search_text_lib.dir/src/DownloadManager.cpp.o
+	$(MAKE) -f CMakeFiles/searchtext.dir/build.make CMakeFiles/searchtext.dir/src/DownloadManager.cpp.o
 .PHONY : src/DownloadManager.cpp.o
 
 src/DownloadManager.i: src/DownloadManager.cpp.i
@@ -214,7 +214,7 @@ src/DownloadManager.i: src/DownloadManager.cpp.i
 
 # target to preprocess a source file
 src/DownloadManager.cpp.i:
-	$(MAKE) -f CMakeFiles/search_text_lib.dir/build.make CMakeFiles/search_text_lib.dir/src/DownloadManager.cpp.i
+	$(MAKE) -f CMakeFiles/searchtext.dir/build.make CMakeFiles/searchtext.dir/src/DownloadManager.cpp.i
 .PHONY : src/DownloadManager.cpp.i
 
 src/DownloadManager.s: src/DownloadManager.cpp.s
@@ -223,35 +223,35 @@ src/DownloadManager.s: src/DownloadManager.cpp.s
 
 # target to generate assembly for a file
 src/DownloadManager.cpp.s:
-	$(MAKE) -f CMakeFiles/search_text_lib.dir/build.make CMakeFiles/search_text_lib.dir/src/DownloadManager.cpp.s
+	$(MAKE) -f CMakeFiles/searchtext.dir/build.make CMakeFiles/searchtext.dir/src/DownloadManager.cpp.s
 .PHONY : src/DownloadManager.cpp.s
 
-src/Link.o: src/Link.cpp.o
+src/wrappers/Link.o: src/wrappers/Link.cpp.o
 
-.PHONY : src/Link.o
+.PHONY : src/wrappers/Link.o
 
 # target to build an object file
-src/Link.cpp.o:
-	$(MAKE) -f CMakeFiles/search_text_lib.dir/build.make CMakeFiles/search_text_lib.dir/src/Link.cpp.o
-.PHONY : src/Link.cpp.o
+src/wrappers/Link.cpp.o:
+	$(MAKE) -f CMakeFiles/searchtext.dir/build.make CMakeFiles/searchtext.dir/src/wrappers/Link.cpp.o
+.PHONY : src/wrappers/Link.cpp.o
 
-src/Link.i: src/Link.cpp.i
+src/wrappers/Link.i: src/wrappers/Link.cpp.i
 
-.PHONY : src/Link.i
+.PHONY : src/wrappers/Link.i
 
 # target to preprocess a source file
-src/Link.cpp.i:
-	$(MAKE) -f CMakeFiles/search_text_lib.dir/build.make CMakeFiles/search_text_lib.dir/src/Link.cpp.i
-.PHONY : src/Link.cpp.i
+src/wrappers/Link.cpp.i:
+	$(MAKE) -f CMakeFiles/searchtext.dir/build.make CMakeFiles/searchtext.dir/src/wrappers/Link.cpp.i
+.PHONY : src/wrappers/Link.cpp.i
 
-src/Link.s: src/Link.cpp.s
+src/wrappers/Link.s: src/wrappers/Link.cpp.s
 
-.PHONY : src/Link.s
+.PHONY : src/wrappers/Link.s
 
 # target to generate assembly for a file
-src/Link.cpp.s:
-	$(MAKE) -f CMakeFiles/search_text_lib.dir/build.make CMakeFiles/search_text_lib.dir/src/Link.cpp.s
-.PHONY : src/Link.cpp.s
+src/wrappers/Link.cpp.s:
+	$(MAKE) -f CMakeFiles/searchtext.dir/build.make CMakeFiles/searchtext.dir/src/wrappers/Link.cpp.s
+.PHONY : src/wrappers/Link.cpp.s
 
 test/DownloadManagerTest.o: test/DownloadManagerTest.cpp.o
 
@@ -313,9 +313,9 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... search_text_lib"
+	@echo "... rebuild_cache"
+	@echo "... searchtext"
 	@echo "... test"
 	@echo "... unit_tests"
 	@echo "... gmock"
@@ -325,9 +325,9 @@ help:
 	@echo "... src/DownloadManager.o"
 	@echo "... src/DownloadManager.i"
 	@echo "... src/DownloadManager.s"
-	@echo "... src/Link.o"
-	@echo "... src/Link.i"
-	@echo "... src/Link.s"
+	@echo "... src/wrappers/Link.o"
+	@echo "... src/wrappers/Link.i"
+	@echo "... src/wrappers/Link.s"
 	@echo "... test/DownloadManagerTest.o"
 	@echo "... test/DownloadManagerTest.i"
 	@echo "... test/DownloadManagerTest.s"
