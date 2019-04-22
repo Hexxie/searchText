@@ -31,6 +31,7 @@ private:
   std::string searchedWord{""};
   Link startUrl{};
   CURL *curl;
+  std::string buffer;
 };
 
 #endif

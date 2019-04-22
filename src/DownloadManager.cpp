@@ -34,15 +34,12 @@ std::string DownloadManager::getUrl() const{
 
 int DownloadManager::downloadUrl() {
 
-//check return for each statement
   curl_easy_setopt(curl, CURLOPT_URL, startUrl.toString().c_str());
   curl_easy_setopt(curl, CURLOPT_HEADERFUNCTION, &Page::headerCallback);
   curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, &Page::writerCallback);
   curl_easy_setopt(curl, CURLOPT_WRITEDATA, &buffer);
 
   int result = curl_easy_perform(curl);
-
-  //save data to file
 
    return result;
 }

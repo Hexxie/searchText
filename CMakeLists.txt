@@ -29,6 +29,7 @@ set(CMAKE_BUILD_TYPE Debug)
 
 add_library(searchtext
 	src/wrappers/Link.cpp
+  src/page/Page.cpp
   src/DownloadManager.cpp    
 )
 
@@ -49,6 +50,7 @@ add_executable(unit_tests
 target_include_directories(unit_tests  
     PRIVATE 
    		  ${PROJECT_SOURCE_DIR}/src/wrappers
+         ${PROJECT_SOURCE_DIR}/src/page
         ${PROJECT_SOURCE_DIR}/src        
         ${PROJECT_SOURCE_DIR}/extern/curl/curl)
 
